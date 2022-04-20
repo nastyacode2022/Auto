@@ -1,8 +1,9 @@
 from pytest import mark
 import logging as logger
-from API_testing.src.utility import generic_utilities
+from API_testing.src.utility import generic_utilities, request_utility
 from API_testing.src.helpers import customers_helper
 from API_testing.src.dao.customers_dao import CustomersDAO
+
 
 @mark.test_1
 def test_create_customer_only_email():
@@ -34,3 +35,14 @@ def test_create_customer_only_email():
     assert id_in_db == id_in_api, f"Wrong customer id in response: {id_in_api} and db: {id_in_db}"\
                                 f"Email:{email}"
 
+
+@mark.test_3
+def test_create_customer_fail_for_existing_email():
+    # get existing email from db
+    cust_dao = CustomersDAO()
+    existing_cust = cust_dao.get_random_customer_from_db()
+    existing_email = existing_cust[0]['user_email']
+    payload = {"email": existing_email}
+    new_customer_api = request_utility.RequestUtility().post(endpoint='customers', payload=payload, expected_status_code=400)
+    assert new_customer_api['code'] == 'registration-error-email-exists',\
+        'Error with registation - email is already exist'
