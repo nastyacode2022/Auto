@@ -11,6 +11,7 @@ def test_get_all_products():
     rs_api = RequestUtility().get(endpoint='products')
     assert rs_api, f'Error - empty list of products'
 
+
 @mark.products
 @mark.test_5
 def test_get_product_by_ID():
