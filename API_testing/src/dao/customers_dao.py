@@ -17,6 +17,6 @@ class CustomersDAO:
 
     def get_random_customer_from_db(self, qty=1):
 
-        sql = "select * from site.wp_users order by rand() limit 1;"
+        sql = "select * from site.wp_users order by rand() limit 5000;"
         rs_sql = self.db_helper.execute_select(sql)
         return random.sample(rs_sql, int(qty))
