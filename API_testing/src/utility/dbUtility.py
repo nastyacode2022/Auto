@@ -7,7 +7,7 @@ class DbUtility:
     def __init__(self):
 
         self.creds = CredentialsUtility().get_db_credentials()
-        self.host = 'localhost'
+        self.host = 'host.docker.internal'
         self.port = 8889
 
     def create_connection(self):

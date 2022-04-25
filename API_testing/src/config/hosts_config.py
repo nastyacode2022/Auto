@@ -3,7 +3,7 @@ API_HOSTS = {
     "dev": "",
     "prod": ""
 }
-
+#http://localhost:7888/site
 WOO_API_HOSTS = {
     "test": "http://192.168.1.23/site/",
     "dev": "",
