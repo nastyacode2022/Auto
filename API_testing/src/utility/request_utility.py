@@ -27,7 +27,7 @@ class RequestUtility:
         if not headers:
             headers = {"Content-Type": "application/json; charset=UTF-8"}
         self.url = self.base_url + endpoint
-        rs_api = requests.post(url=self.url, data=json.dumps(payload), headers=headers, auth=self.auth)
+        rs_api = requests.post(url=self.url, data=json.dumps(payload), headers=headers, auth=self.auth, verify=False)
         self.status_code = rs_api.status_code
         self.expected_status_code = expected_status_code
         self.rs_json = rs_api.json()
@@ -41,7 +41,7 @@ class RequestUtility:
         if not headers:
             headers = {"Content-Type": "application/json; charset=UTF-8"}
         self.url = self.base_url + endpoint
-        rs_api = requests.get(url=self.url, data=json.dumps(payload), headers=headers, auth=self.auth)
+        rs_api = requests.get(url=self.url, data=json.dumps(payload), headers=headers, auth=self.auth, verify=False)
         self.status_code = rs_api.status_code
         self.expected_status_code = expected_status_code
         self.rs_json = rs_api.json()
