@@ -2,6 +2,8 @@ from pytest import mark
 from API_testing.src.utility.request_utility import RequestUtility
 import logging as logger
 
+
+@mark.smoke
 @mark.customers
 @mark.test_2
 def test_get_all_customers():

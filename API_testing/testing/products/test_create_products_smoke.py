@@ -6,6 +6,7 @@ from API_testing.src.utility.request_utility import RequestUtility
 from API_testing.src.utility.generic_utilities import create_random_product_json
 
 
+@mark.smoke
 @mark.products
 @mark.test_6
 def test_create_one_simple_product():

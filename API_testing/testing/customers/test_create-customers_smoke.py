@@ -5,6 +5,7 @@ from API_testing.src.helpers import customers_helper
 from API_testing.src.dao.customers_dao import CustomersDAO
 
 
+@mark.smoke
 @mark.customers
 @mark.test_1
 def test_create_customer_only_email():
@@ -37,6 +38,7 @@ def test_create_customer_only_email():
                                 f"Email:{email}"
 
 
+@mark.smoke
 @mark.test_3
 @mark.customers
 def test_create_customer_fail_for_existing_email():

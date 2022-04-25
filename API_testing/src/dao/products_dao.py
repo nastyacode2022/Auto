@@ -20,3 +20,9 @@ class ProductsDAO:
         sql = f"SELECT {id} FROM site.wp_posts limit 5000"
         rs_sql = self.db_helper.execute_select(sql)
         return rs_sql
+
+    def count_products_by_data(self, data):
+
+        sql = f"SELECT count(*) FROM site.wp_posts where post_date>'{data}'"
+        rs_sql = self.db_helper.execute_select(sql)
+        return rs_sql

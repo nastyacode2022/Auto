@@ -4,6 +4,8 @@ from API_testing.src.dao.products_dao import ProductsDAO
 from API_testing.src.helpers.products_helper import ProductHelper
 import logging as logger
 
+
+@mark.smoke
 @mark.products
 @mark.test_4
 def test_get_all_products():
@@ -12,6 +14,7 @@ def test_get_all_products():
     assert rs_api, f'Error - empty list of products'
 
 
+@mark.smoke
 @mark.products
 @mark.test_5
 def test_get_product_by_ID():
@@ -19,3 +22,5 @@ def test_get_product_by_ID():
     logger.info('Getting product by random ID')
     rs_api = ProductHelper().get_product_by_id(id=ID)
     assert rs_api['id'] == ID, f'There is no such ID: {ID}'
+
+
