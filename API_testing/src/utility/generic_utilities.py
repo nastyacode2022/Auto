@@ -5,6 +5,7 @@ import random
 
 
 def generate_random_email(domain=None, email_prefix=None):
+
     logger.debug("Generating random email")
     if not domain:
         domain = 'gmail.com'
@@ -15,14 +16,14 @@ def generate_random_email(domain=None, email_prefix=None):
     logger.debug("Random email is successfully generated")
     return email
 
-#def choose_element_from_json(search_key,search_value,json):
-#    if len(json) > 1:
-#        for element in range(len(json)):
-#            if json[element][str(search_key)] == search_value:
-#                return search_value
-#        return None
-#    else:
-#        if json[str(search_key)] == search_value:
-#            return search_value
-#        else:
-#            return None
+
+def create_random_product_json():
+
+    name = ''.join(random.choices(string.ascii_lowercase, k=5))
+    desc = ''.join(random.choices(string.ascii_lowercase, k=10))
+    price = str(float(random.choice(range(10, 1000))))
+    json_body = dict()
+    json_body['name'] = name
+    json_body['description'] = desc
+    json_body['regular_price'] = price
+    return json_body
