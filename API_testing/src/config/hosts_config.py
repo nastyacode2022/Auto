@@ -1,5 +1,5 @@
 API_HOSTS = {
-    "test": "http://localhost:7888/site/wp-json/wc/v3/",
+    "test": "http://host.docker.internal:7888/site/wp-json/wc/v3/",
     "dev": "",
     "prod": ""
 }
