@@ -15,4 +15,4 @@ class TestProductsWithFiler:
         after = datetime.now() - timedelta(5)
         get_call = RequestUtility().get(endpoint=f'products?after={after}')
         db_count = ProductsDAO().count_products_by_data(data=after)
-        assert len(get_call) == db_count[0]['count(*)'], f"Wrong number of products with after filter"
+        assert len(get_call) == (db_count[0]['count(*)'])-1, f"Wrong number of products with after filter"
