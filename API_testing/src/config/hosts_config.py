@@ -1,9 +1,10 @@
 API_HOSTS = {
-    "test": "http://host.docker.internal:7888/site/wp-json/wc/v3/",
+    "test": "http://localhost:7888/site/wp-json/wc/v3/",
     "dev": "",
     "prod": ""
 }
 #http://localhost:7888/site
+#http://host.docker.internal:7888/site
 WOO_API_HOSTS = {
     "test": "http://192.168.1.23/site/",
     "dev": "",
