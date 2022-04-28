@@ -5,20 +5,24 @@ API_HOSTS = {
 }
 #http://localhost:7888/site
 #http://host.docker.internal:7888/site
-WOO_API_HOSTS = {
-    "test": "http://192.168.1.23/site/",
-    "dev": "",
-    "prod": ""
-}
 
 DB_HOST = {
     'machine1': {
         "test": {
-                    "host": "127.0.0.1",
+                    "host": "localhost",
                     "database": "site",
                     "table_prefix": "wp_",
                     "socket": None,
-                    "port": "8889"
+                    "port": 8889
         }
-    }
+    },
+    'docker': {
+            "test": {
+                        "host": "host.docker.internal",
+                        "database": "site",
+                        "table_prefix": "wp_",
+                        "socket": None,
+                        "port": 8889
+            }
+        }
 }
